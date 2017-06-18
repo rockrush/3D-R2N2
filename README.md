@@ -7,13 +7,17 @@ This repository contains the source codes for the paper [Choy et al., 3D-R2N2: A
 If you find this work useful in your research, please consider citing:
 
 ```
-@article{choy20163d,
+@inproceedings{choy20163d,
   title={3D-R2N2: A Unified Approach for Single and Multi-view 3D Object Reconstruction},
   author={Choy, Christopher B and Xu, Danfei and Gwak, JunYoung and Chen, Kevin and Savarese, Silvio},
-  journal={arXiv preprint arXiv:1604.00449},
+  booktitle = {Proceedings of the European Conference on Computer Vision ({ECCV})},
   year={2016}
 }
 ```
+
+## Project Page
+
+The project page is available at [http://cvgl.stanford.edu/3d-r2n2/](http://cvgl.stanford.edu/3d-r2n2/).
 
 ## Overview
 
@@ -28,11 +32,13 @@ Traditionally, single view reconstruction and multi-view reconstruction are disj
 
 We can feed in images in random order since the network is trained to be invariant to the order. The critical component that enables the network to be invariant to the order is the `3D-Convolutional LSTM` which we first proposed in this work. The `3D-Convolutional LSTM` selectively updates parts that are visible and keeps the parts that are self-occluded.
 
-![LSTM Analysis](imgs/analysis.png)
-*Visualization of the 3D-Convolutional LSTM input gate activations. The images are fed into the network sequentially from left to right (top row). Visualization of input gate activations. The input gates corresponding to the parts that are visible and mismatch prediction open and update its hidden state (middle row). Corresponding prediction at each time step (bottom row).*
-
 ![Networks](imgs/full_network.png)
 *We used two different types of networks for the experiments: a shallow network (top) and a deep residual network (bottom).*
+
+
+## Results
+
+Please visit the result [visualization page](http://3d-r2n2.stanford.edu/viewer/) to view 3D reconstruction results interactively.
 
 
 ## Datasets
@@ -41,6 +47,7 @@ We used [ShapeNet](http://shapenet.cs.stanford.edu) models to generate rendered 
 
 - ShapeNet rendered images [ftp://cs.stanford.edu/cs/cvgl/ShapeNetRendering.tgz](ftp://cs.stanford.edu/cs/cvgl/ShapeNetRendering.tgz)
 - ShapeNet voxelized models [ftp://cs.stanford.edu/cs/cvgl/ShapeNetVox32.tgz](ftp://cs.stanford.edu/cs/cvgl/ShapeNetVox32.tgz)
+- Trained ResidualGRUNet Weights [ftp://cs.stanford.edu/cs/cvgl/ResidualGRUNet.npy](ftp://cs.stanford.edu/cs/cvgl/ResidualGRUNet.npy)
 
 
 ## Installation
